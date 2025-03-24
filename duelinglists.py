@@ -18,3 +18,42 @@
 #Player two's highest number is 8 at index 1
 #Player one's lowest number is 1 at index 4
 #Player two's lowest number is 1 at index 5
+
+import random
+
+# Create two separate lists with 10 random numbers each, between 1 and 50
+player_one = [random.randint(1, 50) for _ in range(10)]
+player_two = [random.randint(1, 50) for _ in range(10)]
+
+# Display the lists
+print(f"Player One = {player_one}")
+print(f"Player Two = {player_two}")
+
+# Compare the lists and track wins
+player_one_wins = 0
+player_two_wins = 0
+
+for i in range(len(player_one)):
+    if player_one[i] > player_two[i]:
+        player_one_wins += 1
+    elif player_two[i] > player_one[i]:
+        player_two_wins += 1
+
+# Find the highest and lowest numbers and their indices for each player
+player_one_highest = max(player_one)
+player_one_highest_index = player_one.index(player_one_highest)
+player_one_lowest = min(player_one)
+player_one_lowest_index = player_one.index(player_one_lowest)
+
+player_two_highest = max(player_two)
+player_two_highest_index = player_two.index(player_two_highest)
+player_two_lowest = min(player_two)
+player_two_lowest_index = player_two.index(player_two_lowest)
+
+# Display the results
+print(f"Player one won {player_one_wins} times")
+print(f"Player two won {player_two_wins} times")
+print(f"Player one's highest number is {player_one_highest} at index {player_one_highest_index}")
+print(f"Player two's highest number is {player_two_highest} at index {player_two_highest_index}")
+print(f"Player one's lowest number is {player_one_lowest} at index {player_one_lowest_index}")
+print(f"Player two's lowest number is {player_two_lowest} at index {player_two_lowest_index}")
